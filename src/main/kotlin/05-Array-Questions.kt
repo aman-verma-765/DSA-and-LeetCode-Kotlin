@@ -1,4 +1,3 @@
-
 class ArrayQuestions {
 
     /*
@@ -88,9 +87,55 @@ class ArrayQuestions {
     }
 
     /*
-     question no. 1431
-     Kids With the Greatest Number of Candies
+     question no. 1512
+     Number of Good Pairs
      */
+    fun numIdenticalPairs(nums: IntArray): Int {
+        var count = 0
+        for (i in nums.indices) {
+            for (j in nums.indices) {
+                if (i < j && nums[i] == nums[j]) {
+                    count++
+                }
+            }
+        }
+        return count
+    }
+
+    // solution using hashmap
+    fun _numIdenticalPairs(nums: IntArray): Int {
+        val freqMap = HashMap<Int, Int>()
+        var count = 0
+        for (item in nums) {
+            if (freqMap.containsKey(item)) {
+                count += freqMap[item]!!
+                freqMap[item] = freqMap[item]!! + 1
+            } else {
+                freqMap[item] = 1
+            }
+        }
+        return count
+    }
+
+    /*
+     question no. 1365
+     How Many Numbers Are Smaller Than the Current Number
+    */
+    fun smallerNumbersThanCurrent(nums: IntArray): IntArray {
+        val array = IntArray(nums.size)
+        var count = 0
+        for (i in nums.indices) {
+            for (j in nums.indices) {
+                if (i != j && nums[j] < nums[i]) {
+                    count++
+                }
+            }
+            array[i] = count
+            count = 0
+        }
+        return array
+    }
+
 
 }
 

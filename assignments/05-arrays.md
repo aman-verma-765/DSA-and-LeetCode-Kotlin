@@ -3,6 +3,7 @@
 ## Submit the following on your Leetcode profile itself.
 
 ### Easy
+
 1. [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
 
 ```kotlin
@@ -14,6 +15,7 @@ fun buildArray(nums: IntArray): IntArray {
     return array
 }
 ```
+
 2. [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)
 
 ```kotlin
@@ -27,6 +29,7 @@ fun getConcatenation(nums: IntArray): IntArray {
     return array
 }
 ```
+
 3. [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
 
 ```kotlin
@@ -41,7 +44,9 @@ fun runningSum(nums: IntArray): IntArray {
     return array
 }
 ```
+
 4. [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)
+
 ```kotlin
 fun maximumWealth(accounts: Array<IntArray>): Int {
     var wealth = Int.MIN_VALUE
@@ -55,7 +60,9 @@ fun maximumWealth(accounts: Array<IntArray>): Int {
     return wealth
 }
 ```
+
 5. [Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)
+
 ```kotlin
 fun shuffle(nums: IntArray, n: Int): IntArray {
     val array = IntArray(n * 2)
@@ -66,7 +73,9 @@ fun shuffle(nums: IntArray, n: Int): IntArray {
     return array
 }
 ```
+
 6. [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
+
 ```kotlin
 fun kidsWithCandies(candies: IntArray, extraCandies: Int): BooleanArray {
     val array = BooleanArray(candies.size)
@@ -80,8 +89,57 @@ fun kidsWithCandies(candies: IntArray, extraCandies: Int): BooleanArray {
     return array
 }
 ```
+
 7. [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
+
+```kotlin
+fun numIdenticalPairs(nums: IntArray): Int {
+    var count = 0
+    for (i in nums.indices) {
+        for (j in nums.indices) {
+            if (i < j && nums[i] == nums[j]) {
+                count++
+            }
+        }
+    }
+    return count
+}
+```
+
+```kotlin
+// solution using hashmap
+fun numIdenticalPairs(nums: IntArray): Int {
+    val freqMap = HashMap<Int, Int>()
+    var count = 0
+    for (item in nums) {
+        if (freqMap.containsKey(item)) {
+            count += freqMap[item]!!
+            freqMap[item] = freqMap[item]!! + 1
+        } else {
+            freqMap[item] = 1
+        }
+    }
+    return count
+}
+```
+
 8. [How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
+```kotlin
+fun smallerNumbersThanCurrent(nums: IntArray): IntArray {
+    val array = IntArray(nums.size)
+    var count = 0
+    for (i in nums.indices) {
+        for (j in nums.indices) {
+            if (i != j && nums[j] < nums[i]) {
+                count++
+            }
+        }
+        array[i] = count
+        count = 0
+    }
+    return array
+}
+```
 9. [Create Target Array in the Given Order](https://leetcode.com/problems/create-target-array-in-the-given-order/)
 10. [Check if the Sentence Is Pangram](https://leetcode.com/problems/check-if-the-sentence-is-pangram/)
 11. [Count Items Matching a Rule](https://leetcode.com/problems/count-items-matching-a-rule/)
@@ -104,6 +162,7 @@ fun kidsWithCandies(candies: IntArray, extraCandies: Int): BooleanArray {
 28. [Minimum Cost to Move Chips to The Same Position](https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/)
 
 ### Medium
+
 1. [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 2. [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)
 3. [Spiral Matrix III](https://leetcode.com/problems/spiral-matrix-iii/)
@@ -116,6 +175,7 @@ fun kidsWithCandies(candies: IntArray, extraCandies: Int): BooleanArray {
 10. [House Robber](https://leetcode.com/problems/house-robber/)
 
 ### Hard
+
 1. [Max Value of Equation](https://leetcode.com/problems/max-value-of-equation/)
 2. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 3. [Good Array](https://leetcode.com/problems/check-if-it-is-a-good-array/)
