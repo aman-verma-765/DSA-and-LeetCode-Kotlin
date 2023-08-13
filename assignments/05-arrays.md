@@ -4,11 +4,82 @@
 
 ### Easy
 1. [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
+
+```kotlin
+fun buildArray(nums: IntArray): IntArray {
+    val array = IntArray(nums.size)
+    for (index in nums.indices) {
+        array[index] = nums[nums[index]]
+    }
+    return array
+}
+```
 2. [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)
+
+```kotlin
+fun getConcatenation(nums: IntArray): IntArray {
+    val size = nums.size
+    val array = IntArray(size * 2)
+    nums.forEachIndexed { index, item ->
+        array[index] = item
+        array[index + size] = item
+    }
+    return array
+}
+```
 3. [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+
+```kotlin
+fun runningSum(nums: IntArray): IntArray {
+    val size = nums.size
+    val array = IntArray(size)
+    var sum = 0
+    nums.forEachIndexed { index, item ->
+        sum += item
+        array[index] = sum
+    }
+    return array
+}
+```
 4. [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)
+```kotlin
+fun maximumWealth(accounts: Array<IntArray>): Int {
+    var wealth = Int.MIN_VALUE
+    accounts.forEach { person ->
+        var tempWealth = 0
+        person.forEach { wealth ->
+            tempWealth += wealth
+        }
+        if (tempWealth > wealth) wealth = tempWealth
+    }
+    return wealth
+}
+```
 5. [Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)
+```kotlin
+fun shuffle(nums: IntArray, n: Int): IntArray {
+    val array = IntArray(n * 2)
+    for (i in 0..<(nums.size / 2)) {
+        array[i * 2] = nums[i]
+        array[(i * 2) + 1] = nums[i + n]
+    }
+    return array
+}
+```
 6. [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
+```kotlin
+fun kidsWithCandies(candies: IntArray, extraCandies: Int): BooleanArray {
+    val array = BooleanArray(candies.size)
+    var max = candies[0]
+    for (c in candies) {
+        if (max < c) max = c
+    }
+    for (l in candies.indices) {
+        array[l] = (candies[l] + extraCandies) >= max
+    }
+    return array
+}
+```
 7. [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
 8. [How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
 9. [Create Target Array in the Given Order](https://leetcode.com/problems/create-target-array-in-the-given-order/)

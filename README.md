@@ -1,18 +1,15 @@
-# 🔥DSA-Bootcamp-Java
+# 🔥DSA-LeetCode-Kotlin
 
-- [Join Replit](http://join.replit.com/kunal-kushwaha )
-
-- Subscribe to the [YouTube channel](https://www.youtube.com/KunalKushwaha?sub_confirmation=1)
 
 - [📂 Complete Playlist](https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ)
 
-- ✍️ [Assignments](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/tree/main/assignments) (solutions can be found on LeetCode itself)
 
-- [Connect with me](http://kunalkushwaha.com)
+- ✍️ [Assignments](https://github.com/amanverma-765/DSA-and-LeetCode-Kotlin/tree/main/assignments)
 
-- Check out [WeMakeDevs](https://wemakedevs.org)
- 
+
+- Solutions are provided in assignment itself
+
+
+### Credits: [Kunal Kushwaha](http://kunalkushwaha.com)
+
 ## Thanks to all the contributors ❤️
-<a href = "https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=kunal-kushwaha/DSA-Bootcamp-Java"/>
-</a>
