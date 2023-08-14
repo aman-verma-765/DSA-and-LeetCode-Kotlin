@@ -136,7 +136,15 @@ class ArrayQuestions {
         return array
     }
 
-
+    /*
+    question no. 1389
+    Create Target Array in the Given Order
+   */
+    fun createTargetArray(nums: IntArray, index: IntArray): IntArray {
+        val targetArray = mutableListOf<Int>()
+        nums.forEachIndexed { i, item->
+           targetArray.add(index[i], item)
+        }
+        return targetArray.toIntArray()
+    }
 }
-
-
